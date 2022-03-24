@@ -1,5 +1,9 @@
+body {
+  background-color: white;
+}
 .App {
-  text-align: center;
+  text-align: left;
+  color: white;
 }
 
 .App-logo {
@@ -19,13 +23,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: white!important;
 }
 
 .App-link {
-  color: #61dafb;
+  color: white;
 }
 
 @keyframes App-logo-spin {
