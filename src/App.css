@@ -1,42 +1,46 @@
 body {
-  background-color: white;
+  background-color: white!important;
 }
 .App {
   text-align: left;
-  color: white;
+  color: black;
+  background-color: white;
 }
-
+.nav-link {
+  color: white; }
+a:hover {
+    color: white;
+    font-style: italic; }
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.MuiBadge-root {
+  justify-content: flex-end;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.logoEEN {
+  width: 7vw;
+  align-self: start;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white!important;
+  background: rgba(0, 0, 0, 0.12) url(./components/images/verde1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply; 
 }
 
 .App-link {
   color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
