@@ -1,4 +1,4 @@
-import { Wrapper } from '.styledComponents'
+import { Wrapper } from './styledComponents'
 
 const ItemListContainer = ({greeting}) => {
     return(
