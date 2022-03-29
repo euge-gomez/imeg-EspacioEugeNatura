@@ -1,6 +1,8 @@
-const ItemListContainer = () => {
+import { Wrapper } from '.styledComponents'
+
+const ItemListContainer = ({greeting}) => {
     return(
-        <h3 className="m-3">Bienvenido a mi Espacio Natura</h3>
+        <Wrapper> {greeting} </Wrapper>
     );
 }
 export default ItemListContainer;
