@@ -44,3 +44,8 @@ a:hover {
   color: white;
 }
 
+.btn-primary {
+  background-color: orangered;
+  border: ridge 2px orangered;
+}
+
