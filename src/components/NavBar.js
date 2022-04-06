@@ -8,7 +8,7 @@ import CartWidget from './CartWidget';
 const NavBar = () => {
     return (
         <> {/*Todas las paginas estan referenciadas a inicio porque no tengo pages aun*/}
-        <img className="m-3 rounded logoEEN" src={logo} alt="Logo del EEN"/>
+        <img className="m-4 rounded logoEEN" src={logo} alt="Logo del EEN"/>
         <nav class="m-3 navbar navbar-expand-lg col-lg-6 col-md-9 col-sm-9 head__nav">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" 
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 

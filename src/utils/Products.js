@@ -3,7 +3,7 @@ const Productos = [
     {
         id: 1,
         title: "Agua Micelar Chronos",
-        img: ['https://staticar.natura.com/sites/default/files/styles/medium/public/products/69059_1_9.jpg?itok=e9O76Bfo'],
+        img: ['https://http2.mlstatic.com/D_NQ_NP_2X_989175-MLA43386144327_092020-F.webp'],
         descrip: "El Agua Micelar Purificante une la eficacia de un desmaquillante a la suavidad y pureza del agua, removiendo hasta 98% del maquillaje, sin necesidad de enjuagar o frotar. Elimina las partículas de polución, residuos de suciedad y oleosidad, y mantiene la piel hidratada hasta por 8 horas.",
         quantity: '150 ml',
         price: 1500,

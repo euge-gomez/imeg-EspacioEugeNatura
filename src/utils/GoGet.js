@@ -6,7 +6,7 @@ export const GoGet = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (goNow) {
-                resolve(Productos);
+                resolve(Productos[0]);
             } else {
                 reject('Error en la carga de productos')
             }
