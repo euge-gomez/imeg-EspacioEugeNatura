@@ -11,7 +11,6 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         GoGet(2000, Productos)
-        //.then(result => console.log(result)) YA DESDE AQUI NO ANDA
         .then(result => setInfo(result))
         .catch(err => console.log(err))
     }, [])
@@ -22,9 +21,9 @@ const ItemListContainer = ({greeting}) => {
 
     return(
         <div> {greeting} 
-        <br/>
-        <ItemList items={info}/>
-        <ItemCount stock={4} initial={1} onAdd={onAdd}/>
+            <br/>
+            <ItemList items={info}/>
+            <ItemCount stock={4} initial={1} onAdd={onAdd}/>
         </div>
     );
 }
