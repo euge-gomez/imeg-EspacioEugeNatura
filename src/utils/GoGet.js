@@ -1,16 +1,15 @@
+import Productos from '../utils/Products';
+
 let goNow = true;
 
-const GoGet = (time, task) => {
+export const GoGet = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (goNow) {
-                resolve(task);
-                console.log(goNow)
+                resolve(Productos);
             } else {
                 reject('Error en la carga de productos')
             }
-        }, time);
+        }, 2000);
     });
 }
-
-export default GoGet;

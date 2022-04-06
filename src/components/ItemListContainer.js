@@ -1,9 +1,9 @@
 import React from 'react';
 import ItemCount from './ItemCount';
 import { useEffect, useState } from 'react';
-import Productos from './Products';
+import Productos from '../utils/Products';
 import ItemList from './ItemList'
-import GoGet from './GoGet';
+import {GoGet} from '../utils/GoGet';
 
 const ItemListContainer = ({greeting}) => {
 
@@ -11,6 +11,7 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         GoGet(2000, Productos)
+        //.then(result => console.log(result)) YA DESDE AQUI NO ANDA
         .then(result => setInfo(result))
         .catch(err => console.log(err))
     }, [])
