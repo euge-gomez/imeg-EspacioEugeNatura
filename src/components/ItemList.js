@@ -7,8 +7,7 @@ const ItemList = ({items}) => {
             <div className="row">
                 {
                     items.map((elem) => 
-                    <Item key={elem.id} title={elem.title} img={elem.img} />) 
-                    
+                    <Item id={elem.id} title={elem.title} img={elem.img} />)    
                 }
             </div>
         </div>

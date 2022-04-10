@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom'
 
 const Item = ({id, title, img}) => {
     return(
@@ -8,12 +9,15 @@ const Item = ({id, title, img}) => {
                 <img className="card-img-top m-2" src={img} alt="Card cap"/>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
-                    <button className='btn-primary'>Ver Detalles</button>
+                    <Link to={`/producto/${id}`}><button className='btn-primary'>Ver Detalles</button></Link>
                 </div>
             </div>
         </>
+        
     );
+    
 
 };
+
 
 export default Item;

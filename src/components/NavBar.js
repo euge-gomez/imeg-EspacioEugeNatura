@@ -4,11 +4,12 @@ import hamburguer from './images/192-menu3.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import CartWidget from './CartWidget';
+import {Link} from 'react-router-dom';
 
 const NavBar = () => {
     return (
-        <> {/*Todas las paginas estan referenciadas a inicio porque no tengo pages aun*/}
-        <img className="m-4 rounded logoEEN" src={logo} alt="Logo del EEN"/>
+        <> 
+        <Link to='/'><img className="m-4 rounded logoEEN" src={logo} alt="Logo del EEN"/></Link>
         <nav class="m-3 navbar navbar-expand-lg col-lg-6 col-md-9 col-sm-9 head__nav">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" 
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
@@ -18,19 +19,13 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse head__nav" id="navbarSupportedContent">
                   <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                      <a className="nav-link" href="../../public/index.html">Home</a>
+                      <Link to='/' className="nav-link">Home</Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="../../public/index.html">Ciclo Actual</a>
+                      <Link to='/filtro/2' className="nav-link">Belleza</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="../../public/index.html">Contacto</a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="nav-link" href="../../public/index.html">Online</a>
-                      </li>
-                      <li className="nav-item">
-                        <a className="nav-link" href="../../public/index.html">Pronta Entrega</a>
+                        <Link to='/filtro/3' className="nav-link">Cuidados Diarios</Link>
                       </li>
                   </ul>
                 </div> 
