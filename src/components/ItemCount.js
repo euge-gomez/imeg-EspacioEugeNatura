@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [quantity, setCounter]=useState(1);
+    const [quantity, setCounter]=useState(0);
 
     const increment = () => {
         if (quantity<stock) {

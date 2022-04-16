@@ -1,12 +1,18 @@
 import React from 'react';
 import ItemCount from './ItemCount';
+import {useState} from 'react'
+import CheckOut from './CheckOut'
 
 const ItemDetail = ({itemsDetail}) => {
 
+    const [itemCount, setItemCount] = useState(0);
+
     const onAdd = (quantity) => {
-        alert('Has seleccionado ' + quantity +' '+ itemsDetail.title)
+        alert('Has seleccionado ' + quantity +' '+ itemsDetail.title);
+        setItemCount(quantity)
+
     }
-    console.log(itemsDetail)
+    
     return(
         <>
             <div className="container">
@@ -17,7 +23,11 @@ const ItemDetail = ({itemsDetail}) => {
                         <h4> {itemsDetail.quantity}</h4>
                         <h3>${itemsDetail.price}</h3> 
                         <h5><em>Stock:</em> {itemsDetail.stock}</h5>
-                        <ItemCount stock={itemsDetail.stock} initial={1} onAdd={onAdd}/>
+                        {
+                            itemCount === 0 ?
+                            <ItemCount stock={itemsDetail.stock} initial={itemCount} onAdd={onAdd}/> :
+                            <CheckOut/>
+                        }
                     </div>
                     <img className="m-2 col-5 imgDetail" src={itemsDetail.img} alt="Card cap" style={{width:"15vw"}}/>
                 </div>
