@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     const {idProducto} = useParams();
 
     useEffect(() => {
-        GoGet(2000, Productos.find(item => item.id === parseInt(idProducto)) )
+        GoGet(500, Productos.find(item => item.id === parseInt(idProducto)) )
             .then(result => setInfoDetail(result))
             .catch(err => console.log(err))
     }, )
