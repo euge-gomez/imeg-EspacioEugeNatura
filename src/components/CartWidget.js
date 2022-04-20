@@ -8,7 +8,7 @@ const CartWidget = () => {
 
    
     return(
-        <Badge badgeContent={global.cartList.length} color="primary">
+        <Badge badgeContent={4} color="primary">
             <Link to="/cart"><ShoppingCartOutlined/></Link>
         </Badge>
     );

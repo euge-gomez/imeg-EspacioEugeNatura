@@ -6,19 +6,16 @@ const CartContextProvider = ({children}) => {
 
      const [cartList, setCartList] = useState([]);
 
+     const cantidadTotal = () =>
+
+        cartList.reduce((acum, element) => (acum += element.quantity), 0);
+
      const addToCart = (item, quantity) => {
          let previo = cartList.find(element => element.id === item.id);
-         console.log(item)
          if(previo === undefined) {
             setCartList([
                 ...cartList, 
-                {
-                    idProducto: item.id,
-                    imgProducto: item.img,
-                    titleProducto: item.title,
-                    priceProducto: item.price,
-                    quantityProducto: item.quantity
-                }
+                item
             ])
         } else {
             previo.quantity += quantity;
@@ -35,7 +32,7 @@ const CartContextProvider = ({children}) => {
      }
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, clear, borrarProducto}}>
+        <CartContext.Provider value={{cartList, addToCart, clear, borrarProducto, cantidadTotal}}>
             {children}
         </CartContext.Provider>
     ); 
