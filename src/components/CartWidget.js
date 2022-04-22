@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 
 
 const CartWidget = () => {
-
    
     return(
         <Badge badgeContent={4} color="primary">

@@ -1,38 +1,38 @@
-import React, { useContext } from 'react';
+
 import ItemCount from './ItemCount';
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import CheckOut from './CheckOut'
 import { CartContext } from './CartContext';
 
-const ItemDetail = ({itemsDetail}) => {
+
+const ItemDetail = ({item}) => {
 
     const [itemCount, setItemCount] = useState(0);
-    const global = useContext(CartContext);
+    const test = useContext(CartContext)
 
     const onAdd = (quantity) => {
-        alert('Has seleccionado ' + quantity +' '+ itemsDetail.title);
+        alert('Has seleccionado ' + quantity +' '+ item.title);
         setItemCount(quantity);
-        global.addToCart(ItemDetail);
-
+        test.addToCart(item, quantity);
     }
     
     return(
         <>
             <div className="container">
-                <div className="row" key={itemsDetail.id}>
+                <div className="row" key={item.id}>
                     <div className='col-6 m-4'>
-                        <h2 className="card-title">{itemsDetail.title}</h2>
-                        <h6><em>{itemsDetail.descrip}</em></h6>
-                        <h4> {itemsDetail.quantity}</h4>
-                        <h3>${itemsDetail.price}</h3> 
-                        <h5><em>Stock:</em> {itemsDetail.stock}</h5>
+                        <h2 className="card-title">{item.title}</h2>
+                        <h6><em>{item.descrip}</em></h6>
+                        <h4> {item.quantity}</h4>
+                        <h3>${item.price}</h3> 
+                        <h5><em>Stock:</em> {item.stock}</h5>
                         {
                              itemCount === 0 ?
-                            <ItemCount stock={itemsDetail.stock} initial={itemCount} onAdd={onAdd}/> :
+                            <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/> :
                             <CheckOut/>
                         }
                     </div>
-                    <img className="m-2 col-5 imgDetail" src={itemsDetail.img} alt="Card cap"/>
+                    <img className="m-2 col-5 imgDetail" src={item.img} alt="Card cap"/>
                 </div>
             </div> 
         </>

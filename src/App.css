@@ -1,16 +1,21 @@
 body {
   background-color: white!important;
   user-select: none;
+  width: 98vw;
 }
 .App {
-  text-align: left;
+  text-align: center;
   color: black;
   background-color: white;
 }
 .nav-link {
-  color: white; }
-a:hover {
-    color: white;
+  color: white;
+  border: solid 2px rgba(255, 255, 255, 0.6);
+  background-color: rgba(52, 126, 53, 0.6);
+  border-radius: 20px;
+}
+.nav-link:hover {
+    color: rgba(255, 69, 0, 0.5);
     font-style: italic; }
 .App-logo {
   pointer-events: none;
@@ -49,6 +54,9 @@ a:hover {
   background-color: rgb(255, 69, 0);
   border: ridge 2px orangered;
 }
+.deleteItem {
+  height: min-content;
+}
 
 .imgDetail {
   background-color: rgba(255, 69, 0, 0.5);
@@ -60,4 +68,7 @@ a:hover {
 .imgItem {
   height: 20vw;
   width: fit-content;
+}
+.itemCart {
+  border-bottom: solid 2px rgba(255, 69, 0, 0.5);
 }
