@@ -9,7 +9,7 @@ body {
   background-color: white;
 }
 .nav-link {
-  color: white;
+  color: white!important;
   border: solid 2px rgba(255, 255, 255, 0.6);
   background-color: rgba(52, 126, 53, 0.6);
   border-radius: 20px;
@@ -26,6 +26,12 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
+}
+.MuiSvgIcon-root {
+  color:rgb(255, 69, 0)
+}
+.MuiBadge-colorPrimary {
+  background-color: rgb(255, 69, 0)!important;
 }
 .logoEEN {
   width: 7vw;
@@ -53,6 +59,12 @@ body {
 .btn-primary {
   background-color: rgb(255, 69, 0);
   border: ridge 2px orangered;
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  font-style: italic;
+  background-color: rgba(255, 69, 0, 0.5);
+  border: solid 2px rgba(255, 69, 0, 0.5);
 }
 .deleteItem {
   height: min-content;
@@ -69,6 +81,15 @@ body {
   height: 20vw;
   width: fit-content;
 }
+.titleCarro {
+  margin-top: 5vw;
+  margin-left: 2vw;
+}
 .itemCart {
   border-bottom: solid 2px rgba(255, 69, 0, 0.5);
+}
+.resumenCarro {
+  background-color: rgba(255, 69, 0, 0.5);
+  border-radius: 50px;
+  margin: 2vw;
 }
