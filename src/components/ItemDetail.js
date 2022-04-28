@@ -1,6 +1,6 @@
 
 import ItemCount from './ItemCount';
-import {useContext, useState} from 'react'
+import {useContext, useState, React} from 'react'
 import CheckOut from './CheckOut'
 import { CartContext } from './CartContext';
 
