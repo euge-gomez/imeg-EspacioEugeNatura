@@ -9,6 +9,7 @@ export const goGetfromFb = async (idFiltrado) => {
     } else {
         cat = query(collection(db, "products"));
     }
+    
     const searchDb = await getDocs(cat);
     const getDb = searchDb.docs.map(document => ({
         id: document.id,

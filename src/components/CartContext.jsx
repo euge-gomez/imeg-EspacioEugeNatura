@@ -52,7 +52,7 @@ const CartContextProvider = ({children}) => {
 
     const subTotal = () => {
         let partials = cartList.map(item => partialProduct(item.idItem));
-        return partials.reduce((previousValue, currentValue) => previousValue + currentValue);
+        return partials.reduce(((previousValue, currentValue) => previousValue + currentValue),0);
     }
 
     const cuponPrice = () => {

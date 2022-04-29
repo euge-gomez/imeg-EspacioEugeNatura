@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
         goGetOnefromFb(idProducto)
             .then(result => setInfoDetail(result))
             .catch(err => console.log(err))
-    }, [])
+    }, [idProducto])
     
     return(
         <div> 
