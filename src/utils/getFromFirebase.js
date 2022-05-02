@@ -28,7 +28,7 @@ export const goGetOnefromFb = async (idProducto) => {
             ...grabedDoc.data()
         }
       } else {
-        console.log("No existe el producto");
+        console.error("No existe el producto");
       }
   }
 

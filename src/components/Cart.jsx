@@ -1,10 +1,50 @@
 import { useContext, React } from 'react';
 import { CartContext } from './CartContext';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import { collection, serverTimestamp, setDoc, doc, updateDoc, increment} from 'firebase/firestore'
+import db from '../utils/firebaseConfig'
 
 const Cart = () => {
 
     const test = useContext(CartContext);
+
+    const createOrder = () =>  {
+        const itemToBuy = test.cartList.map( item => ({
+            id: item.idItem,
+            title: item.titleItem,
+            price: item.priceItem,
+            qty: item.quantityItem
+        }));
+
+        test.cartList.forEach(async (item) => {
+            const itemGonne = doc(db, "products", item.idItem);
+            await updateDoc(itemGonne, {
+              stock: increment(-item.qtyItem)
+            });
+          });
+
+        let order = {
+            buyer : {
+                name: "Gabriel Mars",
+                email: "marsg@gmail.com",
+                phone: "4719415",
+            },
+            items : itemToBuy,
+            date: serverTimestamp(),
+            total: test.totalPrice()
+        }
+        const printOrderToFb = async () => {
+            const newOrderRef = doc(collection(db, "orders"));
+            await setDoc(newOrderRef, order);
+            return newOrderRef;
+        }
+        printOrderToFb()
+        .then(result => alert("Su orden ha sido creada, con el ID \n" + result.id))
+        .catch(err => console.log(err))
+
+        test.clear()
+
+}   
 
     return (
         <div>
@@ -24,7 +64,7 @@ const Cart = () => {
                     <p><b>Dto 1stBuy 15%: $ </b>- {test.cuponPrice()} </p>
                     <hr/>
                     <h5 className='m-3'><b>Total: $ </b> {test.totalPrice()}</h5>
-                    <button className='btn-primary m-1'>Terminar Compra</button>
+                    <button onClick={createOrder} className='btn-primary m-1'>Terminar Compra</button>
                 </div>
             </div>
             {
